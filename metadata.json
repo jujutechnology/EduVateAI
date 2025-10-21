@@ -1,0 +1,7 @@
+{
+  "name": "AI Tutor2",
+  "description": "A personalized AI companion, guiding K-12 students through any subject with the power of Socratic questioning. Explore, think critically, and discover knowledge in a new, interactive way.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
