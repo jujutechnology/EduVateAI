@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const DefaultGraphic: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -146,6 +145,12 @@ const graphicsMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = 
 };
 
 export const SubjectGraphic: React.FC<{ graphicId: string; className?: string }> = ({ graphicId, className }) => {
+    // Check if it's an image path (starts with / or http)
+    if (graphicId.startsWith('/') || graphicId.startsWith('http')) {
+        return <img src={graphicId} alt="Course icon" className={className} />;
+    }
+    
+    // Otherwise, use the SVG graphics map
     const GraphicComponent = graphicsMap[graphicId] || DefaultGraphic;
     return <GraphicComponent className={className} />;
 };
